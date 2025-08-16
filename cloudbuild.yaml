@@ -1,11 +1,11 @@
 steps:
   # Step 1: Build the Docker image with the correct name and region
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/my-repository/sample-app:v1.0', '.']
+    args: ['build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/my-repository/sample-app:v2.0', '.']
 
   # Step 2: Push the Docker image to the correct Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/my-repository/sample-app:v1.0']
+    args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/my-repository/sample-app:v2.0']
 
   # Step 3: Apply the production deployment YAML to the prod namespace
   - name: 'gcr.io/cloud-builders/kubectl'
